@@ -1,0 +1,453 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Portal de Serviços e-SAJ</title>
+<!-- Adicionado aqui para não impactar mobile --><link rel="stylesheet" href="/cposg/softheme/src/css/app.css">
+<link rel="stylesheet" href="/cposg/softheme/src/fonts/saj/styles.css">
+<link rel="stylesheet" href="/cposg/css/formulario.css" type="text/css">
+<link rel="stylesheet" href="/cposg/webjars/select2/3.5.4/select2.css" type="text/css">
+<link rel="stylesheet" href="/cposg/webjars/select2/3.5.4/select2-bootstrap.css" type="text/css">
+<link rel="stylesheet" href="/cposg/css/saj/select2/saj-select2.css">
+<script>
+	window.saj = window.saj || {};
+	window.saj.env = window.saj.env || {};
+	window.saj.env.root = '/cposg';
+	window.saj.env.css = '/cposg/css';
+	window.saj.env.js = '/cposg/js';
+	window.saj.env.imagens = '/cposg/imagens';
+
+	window.saj.cpo = window.saj.cpo || {};
+	// transfere variavel se cpo esta rodando para totem
+	window.saj.cpo.totem = 'false' == 'true';
+
+	window.saj.cpo.instanciaConsulta = {
+		SG5: 'true' == 'true',
+		SG5TJ: 'true' == 'true',
+		SG5CR: 'false' == 'true',
+		value: 'SG5TJ'
+	}; 
+</script><script language="javascript" type="text/JavaScript" src="/cposg/js/jquery/jquery.min.js?n=1620728708"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/jquery/jquery.func_toggle.js?n=1ef4903b-beac-41ad-beb4-1ab9c244440c"></script><script language="javascript" type="text/javascript" src="/cposg/js/jquery/jquery.blockUI.min.js?n=c022ec30-2ea7-4edf-bada-b307209c4ca2"></script><script language="javascript" type="text/javascript" src="/cposg/js/jquery/jquery.browser.min.js?n=475052af-52e2-440e-bb2a-8034838dcf68"></script><script language="javascript" type="text/javascript" src="/cposg/webjars/lodash/4.17.5/lodash.js?n=eca803d9-e182-4447-ab27-1d7c6f92cdac"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/select2/select2.js?n=fd75bc22-a140-4cfa-8097-15253a5d66d4"></script><script language="javascript" type="text/JavaScript" src="/cposg/webjars/select2/3.5.4/select2_locale_pt-BR.js?n=b6c76754-e838-41f2-8002-dcbe39e9c128"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-select2.js?n=ebe308eb-442d-4677-bba8-b9815f091328"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-web-2.2.41-4.js?n=b3f7db2d-6a0b-4a92-a3cf-f852208d60bc"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-tooltip.js?n=494aa372-cc8c-434e-bc9d-8606717a6171"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-popup-modal-1.0.0-1.js?n=11b96eb8-8211-46ce-a724-3a60470ec7ae"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-browser.js?n=c7648353-1b78-48b4-941d-72795f191f71"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-mascara-input.js?n=63fae94a-4d78-412d-bfb0-06bf373dcd7f"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-numeroProcesso.js?n=91707d18-1751-4381-9a4b-ffef6c61a041"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj-cpo-cbpesquisa.js?n=3374557194"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/acessibilidade/acessibilidade.js?n=5639e787-cddf-4a61-a70e-2f1718ab515b"></script><script language="javascript" type="text/JavaScript" src="/cposg/softheme/src/js/app.js?n=16289891"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js?n=dd11f0cf-9f37-4611-9447-edbaa5ebb431" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js?n=1791337263" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script><script>
+	(function($){
+		$(function(){
+			var intervalo = 115000;
+			$.saj.manterSessao('/cposg/manterSessao.do', intervalo);
+		});
+				
+	})(jQuery);
+</script><script>
+	window.saj.cpo = window.saj.cpo || {};
+	window.saj.cpo.urlBaseAcessoRecursoProcessoParaUsuario = '/cposg/autorizarAcessoRecursoProcessoParaUsuario.do?processoPK.cdProcesso=RI006HNXQ0000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=2161366-82.2021.8.26.0000';
+	window.saj.cpo.urlBaseAcessoRecursoMidiaAudienciaProcessoParaUsuario= '/cposg/autorizarAcessoRecursoAudienciaGravada.do?processoPK.cdProcesso=RI006HNXQ0000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=2161366-82.2021.8.26.0000';
+	window.saj.cpo.urlBaseAcessoRecursoProcessoComSenha = '/cposg/autorizarAcessoRecursoProcessoPorSenha.do?processoPK.cdProcesso=RI006HNXQ0000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=2161366-82.2021.8.26.0000';
+	window.saj.cpo.abrirAutorizarAcessoRecursoProcessoPorSenha = '/cposg/abrirAutorizarAcessoRecursoProcessoPorSenha.do?processoPK.cdProcesso=RI006HNXQ0000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=2161366-82.2021.8.26.0000';
+</script><script language="javascript" type="text/JavaScript" src="/cposg/js/acessoRecurso-2.10.2-0.js?n=3062489019"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/acessoProcesso-2.10.2-0.js?n=3127152735"></script><script>
+	(function($){
+		$(function(){
+			var intervalo = 50000;
+			$.saj.manterSessao('/cposg/manterSessao.do', intervalo);
+		});
+				
+	})(jQuery);
+</script><!-- Correção temporária do alinhamento do divisor de seção de formulário do SPW --><script type="text/javascript">
+		$(function(){$('td[background$="spw/fundo_subtitulo2.gif"]').attr('valign', 'top')});
+	</script>
+</head>
+<script language="javascript" type="text/JavaScript">
+	$.saj.getUrlParameter = function getUrlParameter(sParam) {
+		var sPageURL = decodeURIComponent(window.location.search.substring(1)), sURLVariables = sPageURL.split('&'), sParameterName, i;
+		for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+				if (sParameterName[0] === sParam) {
+					return sParameterName[1] === undefined ? true : sParameterName[1];
+				}
+		}
+	};
+  </script><script type="text/javascript">
+	(function($) {
+		$(function(){
+			var captcha = $.saj.getUrlParameter('uuidCaptcha');
+
+			if (!captcha) {
+				return;
+			}
+
+			var url = $('.processoPrinc').attr('href');
+			$('.processoPrinc').attr('href', url+'&uuidCaptcha='+captcha);
+
+			var $processoPaiApenso = $('.processoPaiApenso');
+            $processoPaiApenso.attr('href', $processoPaiApenso.attr('href') + '&uuidCaptcha=' + captcha);
+
+            var $incidente = $('.incidente');
+            $incidente.attr('href', $incidente.attr('href') + '&uuidCaptcha=' + captcha);
+		})
+	})(jQuery);
+</script><body>
+<input type="hidden" name="cdProcesso" value="RI006HNXQ0000"><!-- HEADER--><div class="unj-entity-header">
+
+	
+
+
+
+
+<div class="unj-entity-header__actions">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 col-md-4">
+                <a href="javascript:history.back();" class="unj-link-back">
+                    <i class="icon-back"></i>
+                </a>
+            </div>
+            <div class="col-13 col-md-12 unj-ta-r">
+                <!-- Pasta digital -->
+                
+                <!-- Peticionar -->
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+
+
+
+
+
+
+<div class="unj-entity-header__summary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-13">
+                <!--principal -->
+                
+                <!-- incidente -->
+                
+                    <span class="unj-label"></span>
+                    <div>
+                        <span class="unj-larger">
+                            
+                        </span>
+                    </div>
+                    
+                    
+                
+                
+            </div>
+        </div>
+        <div class="row">
+            
+            
+            
+            
+            
+            <!-- Processo principal -->
+            
+        </div>
+    </div>
+</div>
+
+	
+
+
+
+
+
+<div class="unj-entity-header__details">
+    <div class="container">
+        <div class="unj-ta-r">
+            <a href="#maisDetalhes" class="unj-link-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="maisDetalhes">
+                <span class="unj-link-collapse__show">
+                    <i class="unj-link-collapse__icon glyph glyph-chevron-down"></i>
+                    Mais
+                </span>
+                <span class="unj-link-collapse__hide">
+                    <i class="unj-link-collapse__icon glyph glyph-chevron-up"></i>
+                    Recolher
+                </span>
+            </a>
+        </div>
+        <div id="maisDetalhes" class="collapse" aria-expanded="false">
+            <div class="row unj-row--border-top">
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label"> </span>
+                        <div class="line-clamp__2"> <span title=""></span>
+</div>
+                    </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+  
+  <div class="div-conteudo container unj-mb-40">
+  	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+
+
+
+
+    
+
+
+
+<aside class="aside-nav aside-nav--left"><div class="aside-nav__inner">
+        <header class="aside-nav__main-menu__header"><span class="aside-nav__main-menu__header__text">  Menu e-SAJ</span>
+            <a href="#" class="aside-nav__user__close-button close-offcanvas">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/icons/icon-close--light.png" alt=""></a>
+        </header><nav class="aside-nav__main-menu"><ul class="aside-nav__main-menu__list" id="conteudoMenuEsaj"></ul></nav><div id="esaj-beta-switcher-placeholder"></div>
+    </div>
+</aside><aside class="aside-nav aside-nav--right aside-nav__user"><div class="aside-nav__inner">
+        <div class="aside-nav__user__sign">
+            <div class="aside-nav__user__sign__brand">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/aside/brasoes/br-tjsp.jpg" alt="">
+</div>
+            <ul class="aside-nav__user__sign__list">
+<li><span class="aside-nav__user__sign__place">Tribunal de Justiça do Estado de São Paulo</span></li>
+            </ul>
+<a href="#" class="aside-nav__user__close-button close-offcanvas">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/icons/icon-close--dark.png" alt=""></a>
+        </div>
+        <hr>
+<div class="aside-nav__user__info">
+            <h4 class="aside-nav__user__title">Minha conta</h4>
+            <ul class="aside-nav__user__info__list">
+<li class="aside-nav__user__info__list__item"><span class="aside-nav__user__info__name" id="menuNmUsuarioLogado"></span></li>
+                <li class="aside-nav__user__info__list__item"><span class="aside-nav__user__info__oab" id="menuUsuarioOabs">OAB: </span></li>
+            </ul>
+<ul class="aside-nav__user__info__list-access">
+<li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" href="https://esaj.tjsp.jus.br/esaj/cadastro.do">Meu perfil</a></li>
+                
+                    <li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" href="https://esaj.tjsp.jus.br/caixapostal">Caixa Postal</a></li>
+                
+                <li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" id="logoutLink" href="#">Sair</a></li>
+            </ul>
+</div>
+    </div>
+</aside><header><link rel="shortcut icon" href="https://esaj.tjsp.jus.br/esaj/tema/padrao/clientes/SP/imagens/favicon.ico" type="image/x-icon">
+<link href="https://esaj.tjsp.jus.br/esaj/app.css" rel="stylesheet" type="text/css">
+<nav class="header__navbar"><a class="header__navbar__menu-hamburger open__aside-nav--left navbar-menu-hamburger__item__link">
+            <span class="menu-hamburger__alert" style="display:none;"></span>
+            <span class="glyph glyph-hamburger"></span>
+        </a>
+
+        <h1 class="header__navbar__title" href="">
+<a class="linkLogo" href="https://esaj.tjsp.jus.br/esaj/redirecionarNovoEsaj.do"><strong>e-SAJ</strong></a> | Consulta de Processos do 2ºGrau</h1>
+
+        <ul class="header__navbar__menu header__navbar__menu--right">
+<li class="header__navbar__menu__item header__navbar__menu__item--initials">
+                <a class="header__navbar__brand__initials" href="http://www.tjsp.jus.br/"> TJSP </a>
+            </li>
+            <li class="header__navbar__menu__item header__navbar__menu__item--user">
+               <span class="header__navbar__name open__aside-nav--right">
+                     <span id="headerNmUsuarioLogado" class="header__navbar__name__text"></span>
+                     <span class="glyph glyph-contact header__navbar__name__icon"></span>
+               </span>
+            </li>
+        </ul></nav></header><div class="offcanvas-backdrop"></div>
+
+
+<script>
+    var dict = {
+        'certificado.tituloCertificadoDigital': 'Certificado digital',
+        'certificado.msgCarregandoCertificado': 'Carregando certificados...',
+        'certificado.msgNenhumCertificadoEncontrado': 'Nenhum certificado encontrado',
+        'certificado.msgErroCarregarCertificado': 'Erro ao carregar certificados',
+        'certificado.msgCertificadoExpirado': '[Expirado]',
+        'certificado.msgCertificadoNaoValido': '[Ainda não válido]',
+        'certificado.msgCertificadoNaoIcpBrasil': '[Não ICP-Brasil]',
+        'certificado.tituloProblemasAoAssinar': 'Falha de comunicação com o dispositivo de assinatura digital',
+
+        'label.contato': 'Contato',
+        'label.identificarSe': 'Identificar-se ',
+
+        'mensagem.aguarde': 'Por favor, aguarde.',
+        'mensagem.paginaNaoCarregada': 'Não foi possível carregar a página.',
+        'mensagem.marcarLido': 'Marcar como lido',
+        'mensagem.registrosSelecionados': 'Registros selecionados',
+        'mensagem.registroJaSelecionado': 'Este registro já está selecionado',
+
+        'mensagem.data.invalida': 'A data digitada é inválida.',
+        'mensagem.data.anoInvalido': 'O ano informado deve ser maior que',
+        'mensagem.data.mesInvalido': 'O mês não pode ser maior que 12.',
+        'mensagem.data.mes': 'O mês',
+        'mensagem.data.mesMaior29dias': 'não pode ter mais que 29 dias.',
+        'mensagem.data.mesMaior28dias': 'não pode ter mais que 28 dias.',
+        'mensagem.data.mesMaior31dias': 'não pode ter mais que 31 dias.',
+        'mensagem.data.mesMaior30dias': 'não pode ter mais que 30 dias.',
+
+        'mensagem.email.invalido': 'O formato do endereço de e-mail não é válido. Verifique se ele tem o formato "usuario@dominio".',
+        'mensagem.email.caracteresInvalidos': 'O endereço de e-mail possui caracteres inválidos',
+        'mensagem.email.usuarioInvalido': 'O formato do usuário informado no endereço de e-mail não é válido.',
+        'mensagem.email.ipInvalido': 'O endereço IP informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioInvalido': 'O formato do domínio informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioIncompleto': 'O domínio informado no endereço de e-mail deve possuir pelo menos duas partes. Por exemplo: "usuario@empresa.com.br".',
+
+        'mensagem.texto.tamanhoInvalido': 'O tamanho do texto digitado é maior do que o tamanho permitido. Tamanho permitido:',
+        'mensagem.texto.caracter': 'O caracter',
+        'mensagem.texto.caracterPosicaoInvalida': 'não está permitido na posição',
+
+        'mensagem.numero.numeroInvalido': 'O valor digitado não é um número válido.',
+        'mensagem.numero.numeroNaoPodeCasasDecimais': 'O número não pode conter casas decimais',
+        'mensagem.numero.numeroCasaDecimaisInvalidas': 'O número de casas decimais é inválido. O número pode conter apenas',
+        'mensagem.numero.casaDecimais': 'casas decimais',
+        'mensagem.numero.numeroInteiroInvalido': 'O número de dígitos inteiros é inválido. O número pode conter apenas',
+        'mensagem.numero.digitosInteiros': 'dígitos inteiros',
+        'mensagem.numero.numeroTamanhoInvalido': 'O número digitado não pode ser maior que',
+        'mensagem.numero.numeroZeroInvalido': 'O número digitado deve ser diferente de zero.'
+    }
+</script><script>
+    var appEsajLayout = appEsajLayout || {};
+    appEsajLayout.urlNovoMenuHtml = 'https://esaj.tjsp.jus.br/esaj/menuPortalV2Html.do?servico=190201';
+
+    var appEsajCas = appEsajCas || {};
+    appEsajCas.urlServicoConteudoIdentificacao = 'https://esaj.tjsp.jus.br/sajcas/conteudoIdentificacaoJson?script=1630652745004&retorno=' + encodeURIComponent(location.href);
+</script><script src="https://esaj.tjsp.jus.br/esaj/js/portalV2-bundle.js?n=806192629"></script><script src="https://esaj.tjsp.jus.br/sajcas/seletorVersaoBeta.js?n=434c3578-e863-4461-bb6d-30161efd7bfe&amp;versao=2"></script><br><br><script language="javascript" type="text/JavaScript">
+	window.saj.cpo = window.saj.cpo || {};
+	window.saj.cpo.mensagemErroSenhaExpirada = 'Senha do processo expirada. Solicite outra no cartório de tramitação do processo.';
+	window.saj.cpo.mensagemErroSenha = 'Senha do processo inválida.';
+</script><div id="popupSenhaProcesso" style="display: none;padding: 20px 20px 5px 20px;">
+	<div class="alert alert-warning" role="alert" id="spwTabelaMensagem" style="display: none;">
+		<span class="alert__icon" aria-hidden="true"><img src="/cposg/imagens/spw/icoError.gif"></span>
+		<span class="alert__text" id="msgErroSenha"></span>
+	</div>
+	<table role="document">
+<tr>
+<td colspan="2" style="padding-bottom:20px" class="orientacao121" tabindex="2" aria-label="Atendendo a resolução 121 do CNJ.">
+				Atendendo a resolução 121 do CNJ.
+			</td>
+		</tr>
+<tr></tr>
+<tr align="center">
+<td align="left" colspan="2" style="padding-bottom:20px" tabindex="4" aria-label="Se for uma parte ou interessado, digite a senha do processo">
+				<div style=" line-height:30px;" class="orientacao-senha-parte">Se for uma parte ou interessado, digite a senha do processo</div>
+				<div style="float:left;width: 140px; padding-left:15px">
+					<input type="password" name="senhaProcesso" maxlength="12" value="" rotulo="" class="form-control" id="senhaProcesso"><input type="hidden" name="cdProcesso" value="RI006HNXQ0000">
+</div>
+				<div class="unj-form-control-group__icon">
+					<div class="dropdown show">
+						<a href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="glyph glyph-info hint-orientacao-senha" aria-hidden="true"></span>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right tooltip-campos" aria-labelledby="dropdownMenuLink">
+							
+								É necessário informar uma senha para acessar processo em segredo de justiça, bem como para acessar autos dos demais processos.<br><br>
+								Se for parte do processo e ainda não possua uma senha, <b>solicite-a no cartório</b>.<br><br>
+</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+<tr>
+<td colspan="2" align="center" style="text-align: center !important;padding-top: 10px;">
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	    
+	<input type="button" name="btFechar" value="Cancelar" onclick="" onmouseover="B_mOver(this);" onmouseout="B_mOut(this);" class="spwBotao " id="botaoFecharPopupSenha"><input type="button" name="btEnviarSenha" value="Continuar" onclick="" onmouseover="B_mOver(this);" onmouseout="B_mOut(this);" class="spwBotaoDefault btn-space" id="botaoEnviarSenha">
+</td>
+		</tr>
+</table>
+</div>
+	
+
+		
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+
+
+
+<footer><nav class="navbar__footer"><div class="navbar__footer__container">
+
+            <ul class="navbar__footer__list-brand">
+<li class="navbar__footer__list-brand__item">
+                    <a href="https://www.softplan.com.br/solucoes/saj-tribunais/" class="navbar__footer__list-brand__item__link link_softplan_tribunais">
+                        <img src="https://esaj.tjsp.jus.br/esaj/img/brand/icon-saj.png" alt="SAJ"></a>
+                </li>
+                <li class="navbar__footer__list-brand__item">
+                    <a href="https://www.softplan.com.br/" class="navbar__footer__list-brand__item__link link_softplan">
+                        <img src="https://esaj.tjsp.jus.br/esaj/img/brand/icon-softplan.png" alt="Softplan"></a>
+                </li>
+            </ul>
+<ul class="navbar__footer__list-actions"></ul>
+</div>
+    </nav></footer>
+</div>
+	
+
+</body>
+</html>
